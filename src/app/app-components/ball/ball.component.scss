@@ -1,0 +1,46 @@
+$angle-base: 36deg;
+
+.ball {
+    background-color: blueviolet;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: xxx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__angle0 {
+        transform: translateX(200px);
+    }
+
+    &__angle1 {
+        transform: rotate($angle-base*1) translateX(200px) rotate(-$angle-base*1);
+    }
+
+    &__angle2 {
+        transform: rotate($angle-base*2) translateX(200px) rotate(-$angle-base*2);
+    }
+    &__angle3 {
+        transform: rotate($angle-base*3) translateX(200px) rotate(-$angle-base*3);
+    }
+    &__angle4 {
+        transform: rotate($angle-base*4) translateX(200px) rotate(-$angle-base*4);
+    }
+    &__angle5 {
+        transform: rotate($angle-base*5) translateX(200px) rotate(-$angle-base*5);
+    }
+    &__angle6 {
+        transform: rotate($angle-base*6) translateX(200px) rotate(-$angle-base*6);
+    }
+    &__angle7 {
+        transform: rotate($angle-base*7) translateX(200px) rotate(-$angle-base*7);
+    }
+    &__angle8 {
+        transform: rotate($angle-base*8) translateX(200px) rotate(-$angle-base*8);
+    }
+    &__angle9 {
+        transform: rotate($angle-base*9) translateX(200px) rotate(-$angle-base*9);
+    }
+}

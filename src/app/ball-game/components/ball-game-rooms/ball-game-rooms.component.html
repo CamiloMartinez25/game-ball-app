@@ -1,0 +1,5 @@
+<div class="ball-room">
+    <div class="ball-room__container m-auto">
+        <app-ball *ngFor="let number of ballsNumbers; index as i" [number]="number" [modifiers]="'ball__angle' + i"></app-ball>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.ball-room {
+    &__container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: burlywood;
+        margin: auto;
+
+        & > app-ball {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
