@@ -6,7 +6,7 @@
             [modifiers]="'ball__silver ball__medium ball__angle' + i"
             (trigger)="handleSelectedNumber(number)"
         ></app-ball>
-        <span class="ball-room__text">1. Select Your<br/> Lucky Number</span>
+        <span class="ball-room__text">1. Selecciona tú número<br/> de la suerte</span>
     </div>
     <div class="ball-room__container m-auto" *ngIf="currentGameBallResult">
         <app-ball
@@ -14,7 +14,7 @@
             [modifiers]="'ball__gold ball__big ball__scale'"
         ></app-ball>
         <span class="ball-room__winner-text">
-            Winner Ball
+            Balota Ganadora
         </span>
     </div>
 </div>

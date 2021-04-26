@@ -6,10 +6,10 @@
             </div>
             <div class="ball-results__input col-sm-8" >
                 <span class="ball-results__winner-text" *ngIf="isWinner">
-                    You Win
+                    Ganaste
                 </span>
                 <span class="ball-results__winner-text ball-results__fail" *ngIf="!isWinner">
-                    You Lose
+                    Perdiste
                 </span>
             </div>
         </div>
@@ -17,11 +17,11 @@
         <div class="ball-results__container row no-gutters">
             <div class="col-sm-12">
                 <div class="ball-results__amount">
-                    <b>Your Bet: </b>
+                    <b>Tú Apuesta: </b>
                     <span class="float-right">{{currentGameBallResult?.amount | currency:'EUR':true}}</span>
                 </div>
                 <div class="ball-results__amount">
-                    <b>Total Win Amount (bet * 1.5): </b>
+                    <b>Total Monto Ganado (Apuesta * 1.5): </b>
                     <span class="float-right">{{currentGameBallResult?.winnerAmount | currency:'EUR':true}}</span>
                 </div>
             </div>
