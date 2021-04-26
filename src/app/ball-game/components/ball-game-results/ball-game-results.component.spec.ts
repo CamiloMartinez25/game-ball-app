@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BallGameResultsComponent } from './ball-game-results.component';
 
 describe('BallGameResultsComponent', () => {
@@ -22,4 +21,12 @@ describe('BallGameResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('On PlayAgain Function, reloadGame must emit event', () => {
+    spyOn(component.reloadGame, 'emit');
+    component.playAgain();
+    fixture.detectChanges();
+    expect(component.reloadGame.emit).toHaveBeenCalledWith();
+  })
+
 });

@@ -1,9 +1,19 @@
 <app-ball-game-headers></app-ball-game-headers>
 <app-layout-main-side>
     <ng-container main>
-        <app-ball-game-room></app-ball-game-room>
+        <app-ball-game-rooms [formState]="(formState$ | async)" [currentGameBallResult]="currentGameBallResult$ | async" (selectedNumber)="handleSelectedNumber($event)" ></app-ball-game-rooms>
     </ng-container>
     <ng-container side>
-
+        <app-ball-game-form 
+            [currentSelectedBall]="currentSelectedBall$ | async"
+            [formState]="formState$ | async"
+            (sendForm)="handleBetForm($event)"
+            *ngIf="!(currentGameBallResult$ | async)"
+        ></app-ball-game-form>
+        <app-ball-game-results
+            [currentGameBallResult]="currentGameBallResult$ | async"
+            (reloadGame)="handleReload()"
+            *ngIf="(currentGameBallResult$ | async)"></app-ball-game-results>
     </ng-container>
 </app-layout-main-side>
+<app-ball-game-footer></app-ball-game-footer>

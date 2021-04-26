@@ -1,5 +1,20 @@
-<div class="ball-room">
-    <div class="ball-room__container m-auto">
-        <app-ball *ngFor="let number of ballsNumbers; index as i" [number]="number" [modifiers]="'ball__angle' + i"></app-ball>
+<div class="ball-room mt-5">
+    <div class="ball-room__container m-auto" [class.ball-room__loading]="formState" *ngIf="!currentGameBallResult">
+        <app-ball 
+            *ngFor="let number of ballsNumbers; index as i"
+            [number]="number"
+            [modifiers]="'ball__silver ball__medium ball__angle' + i"
+            (trigger)="handleSelectedNumber(number)"
+        ></app-ball>
+        <span class="ball-room__text">1. Select Your<br/> Lucky Number</span>
+    </div>
+    <div class="ball-room__container m-auto" *ngIf="currentGameBallResult">
+        <app-ball
+            [number]="currentGameBallResult?.winnerNumber"
+            [modifiers]="'ball__gold ball__big ball__scale'"
+        ></app-ball>
+        <span class="ball-room__winner-text">
+            Winner Ball
+        </span>
     </div>
 </div>

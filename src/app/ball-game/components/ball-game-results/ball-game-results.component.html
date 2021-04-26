@@ -1,1 +1,34 @@
-<p>ball-game-results works!</p>
+<div class="ball-results">
+    <app-game-card>
+        <div class="ball-results__container row no-gutters">
+            <div class="ball-results__selection col-sm-4">
+                <app-ball [number]="currentGameBallResult?.number" [modifiers]="'ball__gold ball__medium'" ></app-ball>
+            </div>
+            <div class="ball-results__input col-sm-8" >
+                <span class="ball-results__winner-text" *ngIf="isWinner">
+                    You Win
+                </span>
+                <span class="ball-results__winner-text ball-results__fail" *ngIf="!isWinner">
+                    You Lose
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="ball-results__container row no-gutters">
+            <div class="col-sm-12">
+                <div class="ball-results__amount">
+                    <b>Your Bet: </b>
+                    <span class="float-right">{{currentGameBallResult?.amount | currency:'EUR':true}}</span>
+                </div>
+                <div class="ball-results__amount">
+                    <b>Total Win Amount (bet * 1.5): </b>
+                    <span class="float-right">{{currentGameBallResult?.winnerAmount | currency:'EUR':true}}</span>
+                </div>
+            </div>
+            <app-button class="m-auto" [type]="'button'" [modifiers]="'button--primary'" (trigger)="playAgain()">
+                Jugar de Nuevo
+            </app-button>
+        </div>
+    </app-game-card>
+</div>
+

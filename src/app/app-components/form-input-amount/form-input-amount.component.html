@@ -1,1 +1,26 @@
-<p>form-input-amount works!</p>
+<div class="form-input-amount" [class.form-input-amount--invalid]="isInvalid" [class.form-input-amount--focus]="isFocus" (click)="handleFocus()">
+    <input
+        class="text-right"
+        [class.invalid]="isInvalid"
+        type="text"
+        [imask]="maskOptions"
+        [value]="currentValue"
+        [disabled]="isDisabled"
+        [placeholder]="placeholder"
+        [autocomplete]="autocomplete"
+        [readonly]="readonly"
+        [attr.min]="min"
+        [attr.max]="max"
+        (input)="handleUnmask($event.target.value)"
+        (keypress)="handleKeypress($event.key)"
+        (focus)="handleFocus()"
+        (blur)="handleBlur()"
+        #inputText
+    >
+    <div class="form-input-amount__label">
+        <ng-content select="[label]"></ng-content>
+    </div>
+    <div class="form-input-amount__error">
+        <ng-content select="[errors]"></ng-content>
+    </div>
+</div>

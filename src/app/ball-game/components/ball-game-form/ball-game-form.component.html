@@ -1,0 +1,57 @@
+<div class="ball-form" *ngIf="currentSelectedBall">
+    <app-game-card>
+        <div class="ball-form__container row no-gutters">
+            <div class="ball-form__selection col-sm-4">
+                <app-ball [number]="currentSelectedBall" [modifiers]="'ball__gold ball__medium'" ></app-ball>
+            </div>
+            <div class="ball-form__input col-sm-8" [formGroup]="betForm" >
+                <div class="ball-form__text">2. Make your bet</div>
+                <app-form-input-amount
+                    class="ball-form__input"
+                    formControlName="amount"
+                    [isInvalid]="(betForm?.get('amount') | isInvalid)"
+                    [isFocus]="true"
+                    [type]="'number'"
+                    #betInput
+                >
+                    <ng-container label>Valor a Apostar (€)</ng-container>
+                    <ng-container errors>
+                        <ng-container
+                            [ngTemplateOutlet]="validationRequired"
+                            [ngTemplateOutletContext]="{ref: betForm?.get('amount')}"
+                            errors
+                        ></ng-container>
+                        <ng-container
+                            [ngTemplateOutlet]="validationMin"
+                            [ngTemplateOutletContext]="{ref: betForm?.get('amount')}"
+                            errors
+                        ></ng-container>
+                    </ng-container>
+                </app-form-input-amount>
+                <app-button [type]="'button'" [modifiers]="buttonModifiers" (trigger)="play()" [isDisabled]="betForm?.invalid || formState" #betButton>
+                    Jugar
+                </app-button>
+            </div>
+        </div>
+    </app-game-card>
+</div>
+
+<ng-template #validationRequired let-ref="ref">
+    <ng-container *ngIf="(
+      ref.touched &&
+      
+      ref.hasError('required')
+    )">
+      <span>Este campo es requerido.</span>
+    </ng-container>
+</ng-template>
+
+<ng-template #validationMin let-ref="ref">
+    <ng-container *ngIf="(
+      ref.touched &&
+      
+      ref.hasError('min')
+    )">
+      <span>La apuesta mínima es 5 Euros</span>
+    </ng-container>
+</ng-template>

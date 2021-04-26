@@ -1,15 +1,70 @@
 $angle-base: 36deg;
 
 .ball {
-    background-color: blueviolet;
-    width: 120px;
-    height: 120px;
+    
     border-radius: 100%;
     text-align: center;
-    font-size: xxx-large;
+    font-size: var(--font-size-biggest);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &__silver {
+        background: url('../../../assets/images/silver-glitter.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__gold {
+        background: url('../../../assets/images/golden-glitter.jfif');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__medium {
+        width: 120px;
+        height: 120px;
+    }
+
+    &__big {
+        width: 250px;
+        height: 250px;
+
+        & .ball__number {
+            width: 120px;
+            height: 120px;
+            font-size: var(--font-size-biggest);
+        }
+    }
+
+    &__scale {
+        animation: scale 2s 1;
+    }
+
+    &__number {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: rgba(255,255,240,0.8);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'CASINO';
+        box-shadow: var(--elevation-z0);
+    }
+
+    &:hover {
+        background: url('../../../assets/images/golden-glitter.jfif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: var(--elevation-z16);
+        cursor: pointer;
+
+        & .ball__number {
+            transform: scale(1.25);
+        }
+    }
 
     &__angle0 {
         transform: translateX(200px);

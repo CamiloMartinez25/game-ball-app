@@ -4,13 +4,38 @@
         width: 400px;
         height: 400px;
         border-radius: 50%;
-        background-color: burlywood;
         margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         & > app-ball {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
         }
+    }
+
+    &__text {
+        color: whitesmoke;
+        text-align: center;
+        font-size: var(--font-size-bigger);
+        font-weight: var(--font-weight-semibold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+    &__loading {
+        animation: rotation 4s infinite;
+    }
+
+    &__winner-text {
+        position: absolute;
+        bottom: 0px;
+        font-size: var(--font-size-biggest);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
     }
 }

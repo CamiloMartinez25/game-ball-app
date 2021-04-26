@@ -1,0 +1,86 @@
+.button {
+    background-color: transparent;
+    border: 0.0625rem solid transparent;
+    color: var(--color-primary-contrast);
+    display: inline-block;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    outline: none;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+  
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  
+    // Color
+    &--primary {
+      background-color: var(--color-primary);
+      color: var(--color-primary-contrast);
+  
+      &:hover {
+        background-color: var(--color-primary-dark);
+        color: var(--color-primary-contrast);
+      }
+  
+      &:active {
+        background-color: var(--color-primary-light);
+        color: var(--color-primary-contrast);
+      }
+  
+      &:before {
+        background-color: var(--color-primary-contrast);
+      }
+    }
+
+    // Shape
+    &--round {
+      border-radius: 100rem;
+    }
+  
+    // Display
+    &--block {
+      display: block;
+      width: 100%;
+    }
+  
+    &[diabled],
+    &:disabled {
+      background-color: var(--color-primary-light-alpha);
+      border-color: var(--color-primary-light-alpha);
+      color: var(--color-primary-light);
+      opacity: 0.75;
+    }
+  
+    // Animations
+    &--loading {
+      &:before {
+        animation: rotate-in 1s linear infinite;
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        margin-right: 0.5rem;
+        margin-top: -0.25rem;
+        mask: url('../../../assets/icons/circle-notch.svg') no-repeat 50% 50%;
+        width: 1rem;
+        vertical-align: middle;
+      }
+    }
+
+}
+
+@keyframes rotate-in {
+    from {
+      transform-origin: center;
+      transform: rotate(0);
+    }
+  
+    to {
+      transform-origin: center;
+      transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,53 @@
+.ball-results {
+    margin-top: 1.5rem;
+    animation: scale 2s 1;
+
+    &__container { 
+        min-height: 120px;
+    }
+
+    &__fail {
+        color: var(--error) !important;
+        text-shadow: 0 0 5px var(--color-primary-dark);
+    }
+    
+    &__selection {
+        border-right: 2px solid ivory;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    &__text {
+        color: whitesmoke;
+        font-size: var(--font-size-bigger);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    &__winner-text {
+        
+        font-size: var(--font-size-biggest);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
+    }
+
+    &__input {
+        animation: scale 2s 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__amount {
+        font-size: var(--font-size-bigger);
+        color: var(--color-primary);
+    }
+}
+
+hr {
+    border-top: 2px solid var(--color-primary-contrast);
+}

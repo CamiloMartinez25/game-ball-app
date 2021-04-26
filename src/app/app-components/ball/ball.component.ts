@@ -1,17 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ball',
   templateUrl: './ball.component.html',
   styleUrls: ['./ball.component.scss']
 })
-export class BallComponent implements OnInit {
+export class BallComponent {
   @Input() public number: number;
   @Input() public modifiers: string;
+  @Output() public trigger: EventEmitter<void>
 
-  constructor() { }
+  constructor() {
+    this.trigger = new EventEmitter();
+  }
 
-  ngOnInit(): void {
+  handleClick(): void {
+    this.trigger.emit();
   }
 
 }
